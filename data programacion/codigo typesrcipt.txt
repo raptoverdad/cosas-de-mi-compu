@@ -1,0 +1,19 @@
+archivo para correr typescript y obtener el archivo de configuracion: npm run tsc -- --init
+investigar que son los tipos en typesrcript. por cada modulo puede haber un problema de tipos y hay que
+instalar packetes para que los tipos se activen en el modulo que no  reconoce typescript como :
+npm install @types/express -D 
+he creado un script llamado "tsc" y ese sirve para compilar. para compilar la app, he creado una carpeta llamada build para que los archivos compilados y los del codigo no estén en la misma carpeta. corre el app con node build/index.js
+
+npm i ts-node-dev -D para que el archivo compile automaticamente despues de un cambio
+en el package agregue un script: "dev":"ts-node-dev nombreDeTuArchivo"
+
+-----------ARCHIVO DE CONFIGURACIÓN DE TYPESCRIPT-------------------------
+
+    - "outDir": "./"  = INDICA DONDE SE ALOJARÁN LOS ARCHIVOS COMPILADOS LISTOS PARA CORRER
+    - "esModuleInterop": true =EL VALOR TRUE INDICA QUE EL REQUIRE O EL IMPORT SON VALIDOS PARA IMPORTAR PACKETES      -  "noUnusedParameters": true =ENTREGA UN ERROR SI UN PARAMETRO NO ES UTILIZADO. SE SOLUCIONA INLUYENDO
+                                  UN "_" AL PARAMETRO NO UTILIZADO: "_req"    
+
+
+
+
+----------------------------------------------------------------------------------

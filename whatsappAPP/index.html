@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/1be51e7619.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation:wght@500&family=Kanit:wght@300&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">    
+<title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            padding: 0%;
+            margin: 0%;
+        }
+        .contenedor{
+            display: flex;
+        }
+        .celular1, .celular2{
+            height: 100vh;
+            width: 50vw;
+        }
+        .celular1{
+        display: grid;     
+        grid-template-rows: repeat(3,15vh minmax(70vh,min-content) 15vh);   
+        background: #aff;
+        }
+        .celular2{
+         display: grid;
+         grid-template-rows: repeat(3,15vh minmax(70vh,min-content) 15vh);   
+        background: #faf;
+        }
+        .botones{
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid white;
+        }
+
+        .texto-1,.texto-2{
+            height:3vh;
+        }
+        .boton-1,.boton-2{
+            height:3vh;
+            width: 4vw;
+            margin-left: 2%;
+            outline:none;
+            border: none;
+            padding: auto;
+            background: rgba(0,0,0, 0.1);
+            font-family: 'Edu NSW ACT Foundation', cursive;    
+            font-weight: 500;
+            font-size: large;
+            cursor: pointer;
+            }
+            
+
+        .celular1-body,.celular2-body{
+     
+         
+            background: rgba(0,0,0, 0.5);
+            border: 2px solid white;
+            overflow-y: auto;
+            max-width: 100%;
+           
+
+        }
+        .header-1,.header-2{
+            display: flex;
+            border: 2px solid white;
+           justify-content: center;
+           align-items: center;
+           
+        }
+      
+        .perfil-celular1{
+            display: flex;
+            align-content: center;
+            width: 5vw;
+            background: #0cc;
+            cursor: pointer;
+      
+        }
+        .perfil-celular2{
+           display: flex;
+            align-content: center;
+            width: 5vw;
+            background: #c0c;
+            cursor: pointer;
+         
+        }
+        .userNameDiv-celular1{
+           
+            display: flex;
+           width: 40vw;
+            justify-content: center;
+            border-bottom:2px solid #0cc ;
+          
+        }
+        .userNameDiv-celular2{
+           
+           display: flex;
+          width: 40vw;
+           justify-content: center;
+           border-bottom:2px solid #c0c ;
+      
+       }
+        .user{
+            object-fit:cover;
+            width: 5vw;
+            max-height: 10vh;
+        }
+        .user1{
+            width: 5vw;
+            max-height:10vh;
+            object-fit:cover;
+        }
+    
+        
+
+        h2{
+            font-family: 'Roboto', sans-serif;
+            color: #000;
+        }
+
+    .mensajeenviado
+    {
+     margin-left: 50%;
+    background:#000;
+    max-width:50%;
+    word-wrap: break-word;/*solucion al problema de las frases muy largas*/
+
+    color: #fff;
+    font-family: 'Edu NSW ACT Foundation', cursive;    
+    }
+        /*solucion link: https://lenguajecss.com/css/fuentes-y-tipografias/textos-y-alineaciones/*/
+    .mensajerecibido
+    {
+    
+    background: #fff;
+    max-width:50%;
+    min-height: min-content;
+ 
+    word-wrap: break-word; /*solucion al problema de las frases muy largas*/
+    
+    font-family: 'Edu NSW ACT Foundation', cursive;    
+    }
+    .mensajeenviado p, .mensajerecibido p{
+        margin: 3%;
+        font-size: 5vh;
+    }
+    .mensajeenviado img, .mensajerecibido img{
+        margin: 3%
+        ;
+    }
+
+    .texto-1,.texto-2
+    {
+    width: 50vh;
+    }
+
+    .divFile,.divFile2
+    {
+    padding: 10px;
+    width: 2vw;
+    margin: 5vw;
+    }
+
+    #file,#file2,#filePhoto,#filePhoto2
+    {
+    display: none;
+    }
+        
+    .divFile  label
+    {
+    display: block;
+    text-align: center;
+    color: #0cc;
+    cursor: pointer;
+    }
+
+   
+    .divFile2  label
+    {
+    display: block;
+    text-align: center;
+    color: #c0c;
+    cursor: pointer;
+    }
+    .img{
+        display: flex;
+        justify-content: center;
+        max-width: 50%;
+        max-height: 50%;
+        align-content: center;
+    }
+    .divFilePhoto
+    {
+        display: flex;
+        width: 5vw;
+        max-height: 10vh;
+        min-height:10vh ;
+        justify-content: center;
+        align-items: center;
+    }
+    .divFilePhoto label
+    {
+        display: block;
+   position: relative;
+   font-size: 3vw;
+        
+    cursor: pointer;
+    }
+    .divFilePhoto2
+    {
+        display: flex;
+        width: 5vw;
+        max-height: 10vh;
+        min-height:10vh ;
+        justify-content: center;
+        align-items: center;
+    }
+    .divFilePhoto2 label
+    {
+        display: block;
+   position: relative;
+   font-size: 3vw;
+        
+    cursor: pointer;
+    }
+
+
+
+    /*modal 1*/
+
+    .navegacion{
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+      
+        align-items: center;
+        color: #fff;
+    }
+    .modal-perfil1{
+       display:none;
+       flex-direction: column;
+       position: fixed;
+   
+       margin-right: 50%;
+
+       background-color: #0cc;
+     
+       right: 0;
+  
+       left: 0%;
+       
+       height: 100vh;
+       width: 50vw;
+
+    }
+    /* modal 2*/
+    .modal-perfil2{
+       display:none;
+       flex-direction: column;
+       position: fixed;
+       background-color: #c0c;
+       margin-left: 50%;
+
+       right: 0;
+  
+       left: 0%;
+       
+       height: 100vh;
+       width: 50vw;
+
+    }
+    .navegacion2{
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        
+        align-items: center;
+        color: #fff;
+    }
+    .salir1,.salir2{
+        color: #fff;
+        font-size: 4vh;
+        cursor: pointer;
+    }
+    .profilepic{
+   
+     height: 80%;
+     width: 100%;
+     background: #aff;
+
+    }
+    .profilepic2{
+   
+   height: 80%;
+   width: 100%;
+   background: #faf;
+
+  }
+    .profilepicmodal,.profilepicmodal2{
+
+        height: 100%;
+        width: 100%;
+      object-fit:contain;
+       }
+
+  
+        
+</style>
+</head>
+<body>
+<!-- nota: usar grid para ambos celulares y darles su respectivo espacio para un header, un cuerpo y el area de mensajes y el boton enviar -->
+
+<div class="contenedor">
+    
+
+    <div class="celular1">
+    
+    <div class="modal-perfil1">
+       <div class="profilepic"><img class='profilepicmodal'src="stich.png" alt=""></div> 
+        <div class="navegacion"><h1>Stich</h1><div class="divFilePhoto"><label for="filePhoto"><i class="fa-solid fa-camera"></i></label><input type="file" name="" id="filePhoto"> </div><div><label for='salir1'><i id='salir1'class="fa-solid fa-arrow-right-from-bracket salir1"></i></label></div></div>
+    </div>  
+          <div class="header-1">
+
+            <div class="perfil-celular1 perfil-celular1Hover"><img class='user1'src="stich.png" alt="">             </div><div class="userNameDiv-celular1"><h2>stich</h2></div>
+          </div>
+
+             <div class="celular1-body">
+              
+             </div>
+
+          <div class="botones">
+
+        
+          <input class='texto-1'type="text" name="" id="">
+          <input class="boton-1" type="button" value="Send">
+          <div class="divFile">
+            <label for="file"><i class="fa-solid fa-file"></i></label>
+            <input type="file" name="" id="file">
+          </div>
+     
+
+          </div>    
+
+    </div>
+
+<!--               celular 2               -->
+
+    <div class="celular2">
+ 
+<!-- modal 2 -->
+<div class="modal-perfil2">
+    <div class="profilepic2"><img class='profilepicmodal2'src="stich.png" alt=""></div> 
+     <div class="navegacion2"><h1>Stich</h1><div class="divFilePhoto2"><label for="filePhoto2"><i class="fa-solid fa-camera"></i></label><input type="file" name="" id="filePhoto2"> </div><div><label for='salir2'><i id='salir2'class="fa-solid fa-arrow-right-from-bracket salir2"></i></label></div></div>
+ </div>  
+<!-- fin modal 2 -->
+        <div class="header-2">
+        <div class="perfil-celular2 perfil-celular2Hover"><img class='user'src="sticha.png" alt=""></div><div class="userNameDiv-celular2"><h2>sticha</h2></div>
+        </div>
+
+            <div class="celular2-body">
+          
+            </div>
+
+        <div class="botones">
+            <input class='texto-2'type="text" name="" id="">
+            <input class="boton-2" type="button" value="Send">
+            <div class="divFile2">
+                <label for="file2"><i class="fa-solid fa-file"></i></label>
+                <input type="file" name="" id="file2">
+              </div>
+        </div> 
+
+
+    </div>
+
+</div>
+   
+<script>
+"use strict";
+
+const boton1=document.querySelector('.boton-1')
+const boton2=document.querySelector('.boton-2')
+const texto1=document.querySelector('.texto-1')
+const texto2=document.querySelector('.texto-2')
+const divBody1=document.querySelector('.celular1-body')
+const divBody2=document.querySelector('.celular2-body')
+//files
+const archive=document.querySelector('#file')
+const archive2=document.querySelector('#file2')
+//profile files
+const profileArchive=document.querySelector('#filePhoto')
+const profileArchive2=document.querySelector('#filePhoto2')
+
+
+
+
+
+
+
+boton1.addEventListener('click',()=>{
+
+const fragmento=document.createDocumentFragment();
+let Mensaje=document.createElement('P');
+let divMensajeEnviado=document.createElement('DIV');
+Mensaje.textContent=texto1.value;
+divMensajeEnviado.appendChild(Mensaje)
+divMensajeEnviado.classList.add('mensajerecibido')
+fragmento.appendChild(divMensajeEnviado)
+divBody2.appendChild(fragmento)
+
+const fragmento2=document.createDocumentFragment();
+let Mensaje2=document.createElement('P');
+let divMensajeEnviado2=document.createElement('DIV');
+Mensaje2.textContent=texto1.value;
+
+//restriccion mensajes
+
+//
+
+divMensajeEnviado2.appendChild(Mensaje2)
+divMensajeEnviado2.classList.add('mensajeenviado')
+fragmento2.appendChild(divMensajeEnviado2)
+divBody1.appendChild(fragmento2)
+
+
+//intersecter para aparecer el ultimo mensaje enviado EUREKAAAAAAAA
+const observerFunction=entries=>{
+const entry = entries[0]
+console.log(entry.isIntersecting)
+if(entry.isIntersecting===false){
+
+
+
+   
+    divBody1.scrollBy(0,100000)
+
+    
+   /*este scrollBy tiene el parametro de la derecha en positivo por que es el eje Y en direccion 
+   hacia abajo*/ 
+ 
+   //aqui un videito de ayuda: https://www.youtube.com/watch?v=EIwhwljez6g
+
+   //metodo scroll, scrollBy
+}
+}
+
+const observer = new IntersectionObserver(observerFunction)
+
+observer.observe(divBody1.lastElementChild)
+
+})
+
+boton2.addEventListener('click',()=>{
+
+const fragmento=document.createDocumentFragment();
+let Mensaje=document.createElement('P');
+let divMensajeEnviado=document.createElement('DIV');
+Mensaje.textContent=texto2.value;
+divMensajeEnviado.appendChild(Mensaje)
+divMensajeEnviado.classList.add('mensajerecibido')
+fragmento.appendChild(divMensajeEnviado)
+divBody1.appendChild(fragmento)
+
+const fragmento2=document.createDocumentFragment();
+let Mensaje2=document.createElement('P');
+let divMensajeEnviado2=document.createElement('DIV');
+Mensaje2.textContent=texto2.value;
+divMensajeEnviado2.appendChild(Mensaje2)
+divMensajeEnviado2.classList.add('mensajeenviado')
+fragmento2.appendChild(divMensajeEnviado2)
+divBody2.appendChild(fragmento2)
+
+
+
+//intersecter
+const observerFunction2=entries2=>{
+const entry2 = entries2[0]
+console.log(entry2.isIntersecting)
+if(entry2.isIntersecting===false){
+
+  
+    divBody2.scrollBy(0,10000000)
+   
+}
+}
+
+const observer2 = new IntersectionObserver(observerFunction2)
+
+observer2.observe(divBody2.lastElementChild)
+
+})
+
+//file
+
+archive.addEventListener('change',ar=>{
+    readArchive(archive.files[0])
+});
+
+const readArchive = ar =>{
+    const reader = new FileReader();
+    reader.readAsDataURL(ar);
+
+    reader.addEventListener('load',e=>{
+        let url= URL.createObjectURL(ar)
+        let img= document.createElement('IMG');
+        img.setAttribute('src',url);
+        img.classList.add('img')
+        const fragmento=document.createDocumentFragment();
+        let divEnviado= document.createElement('DIV');
+        divEnviado.classList.add('mensajeenviado');
+        divEnviado.appendChild(img)
+       fragmento.appendChild(divEnviado)
+        divBody1.appendChild(fragmento);
+
+        let img2= document.createElement('IMG');
+        img2.setAttribute('src',url);
+        const fragmento2=document.createDocumentFragment();
+        let divEnviado2= document.createElement('DIV');
+        divEnviado2.classList.add('mensajerecibido');
+        img2.classList.add('img')
+        divEnviado2.appendChild(img2)
+       fragmento2.appendChild(divEnviado2)
+        divBody2.appendChild(fragmento2);
+    })
+       //observer archivo 1
+       const observerFunction=entries=>{
+     const entry = entries[0]
+     console.log(entry.isIntersecting)
+     if(entry.isIntersecting===false){
+  
+         divBody1.scrollBy(0,100000)
+   }
+   }
+
+    const observer = new IntersectionObserver(observerFunction)
+
+    observer.observe(divBody1.lastElementChild)
+
+
+
+}
+
+
+
+   
+
+ 
+
+
+archive2.addEventListener('change',ar2=>{
+    readArchive2(archive2.files[0])
+});
+
+const readArchive2 = ar2 =>{
+    const reader2 = new FileReader();
+    reader2.readAsDataURL(ar2);
+
+    reader2.addEventListener('load',e=>{
+        let url2= URL.createObjectURL(ar2)
+        let img3= document.createElement('IMG');
+        img3.setAttribute('src',url2);
+        img3.classList.add('img')
+        const fragmento3=document.createDocumentFragment();
+        let divEnviado3= document.createElement('DIV');
+        divEnviado3.classList.add('mensajeenviado');
+        divEnviado3.appendChild(img3)
+       fragmento3.appendChild(divEnviado3)
+        divBody2.appendChild(fragmento3);
+
+        let img4= document.createElement('IMG');
+        img4.setAttribute('src',url2);
+        const fragmento4=document.createDocumentFragment();
+        let divEnviado4= document.createElement('DIV');
+        divEnviado4.classList.add('mensajerecibido');
+        img4.classList.add('img')
+        divEnviado4.appendChild(img4)
+       fragmento4.appendChild(divEnviado4)
+        divBody1.appendChild(fragmento4);
+    })
+
+     //intersection observer para funcion de archivo2
+
+     const observerFunction2=entries2=>{
+     const entry2 = entries2[0]
+     console.log(entry2.isIntersecting)
+     if(entry2.isIntersecting===false){
+  
+         divBody2.scrollBy(0,100000)
+   }
+   }
+
+    const observer2 = new IntersectionObserver(observerFunction2)
+
+    observer2.observe(divBody2.lastElementChild)
+
+
+
+}
+
+
+//modal perfiles
+const perfil1=document.querySelector('.perfil-celular1')
+const perfil2=document.querySelector('.perfil-celular2')
+
+perfil1.addEventListener('click',()=>{
+
+ document.querySelector('.modal-perfil1').style.display='flex'   
+
+ })
+
+perfil2.addEventListener('click',()=>{
+
+document.querySelector('.modal-perfil2').style.display='flex'   
+
+})
+
+const perfil1salir=document.querySelector('.salir1');  
+const perfil2salir=document.querySelector('.salir2');  
+
+perfil1salir.addEventListener('click',()=>{
+
+    document.querySelector('.modal-perfil1').style.display='none';   
+
+})
+
+perfil2salir.addEventListener('click',()=>{
+   
+    document.querySelector('.modal-perfil2').style.display='none';   
+
+})
+
+
+
+
+//fin modal perfiles
+
+
+
+profileArchive.addEventListener('change',ar=>{
+    readProfile(profileArchive.files[0])
+});
+
+const readProfile = ar =>{
+
+
+    const reader = new FileReader();
+    reader.readAsDataURL(ar);
+
+    reader.addEventListener('load',e=>{
+        let url= URL.createObjectURL(ar)
+       
+        let img= document.querySelector('.user1');
+        perfil1.removeChild(img)
+        let newImg= document.createElement('IMG');
+        newImg.setAttribute('src',url);
+        newImg.classList.add('user1')
+        perfil1.appendChild(newImg)
+
+        //para el modal del perfil 1
+      
+        let img2= document.querySelector('.profilepicmodal');
+        document.querySelector('.profilepic').removeChild(img2)
+        let newImg2= document.createElement('IMG');
+        newImg2.setAttribute('src',url);
+       
+        newImg2.classList.add('profilepicmodal')
+        document.querySelector('.profilepic').appendChild(newImg2)
+      
+    })
+
+}
+
+
+profileArchive2.addEventListener('change',ar=>{
+    readProfile2(profileArchive2.files[0])
+});
+
+const readProfile2 = ar =>{
+
+
+    const reader = new FileReader();
+    reader.readAsDataURL(ar);
+
+    reader.addEventListener('load',e=>{
+        let url2= URL.createObjectURL(ar)
+       
+        let img2= document.querySelector('.user');
+        perfil2.removeChild(img2)
+        let newImg2= document.createElement('IMG');
+        newImg2.setAttribute('src',url2);
+        newImg2.classList.add('user')
+        perfil2.appendChild(newImg2)
+
+            //para el modal del perfil 2
+      
+        let img3= document.querySelector('.profilepicmodal2');
+        document.querySelector('.profilepic2').removeChild(img3)
+        let newImg3= document.createElement('IMG');
+        newImg3.setAttribute('src',url2);
+       
+        newImg3.classList.add('profilepicmodal2')
+        document.querySelector('.profilepic2').appendChild(newImg3)
+       
+    })
+
+}
+
+
+
+
+   
+
+</script>    
+</body>
+</html>

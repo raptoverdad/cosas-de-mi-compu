@@ -1,0 +1,13 @@
+import axios from 'axios'
+
+
+axios.get(`http://localhost:3000/settings/${state.token}`)
+    .then(res=>{
+  if(res.data.success==='true'){
+    console.log('success')
+    this.picture=res.data.picture
+    this.username=res.data.username
+ 
+  }
+}).catch(err=>{})
+

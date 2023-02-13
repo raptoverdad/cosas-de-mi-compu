@@ -1,0 +1,2 @@
+SERVICIO PARA NODE: Elastic beanstalk 
+SERVICIO PARA VUE: AWS cloudfront + S3	
