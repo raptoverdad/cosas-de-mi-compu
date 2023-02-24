@@ -8,7 +8,8 @@ npm install @types/express -D
 he creado un script llamado "tsc" y ese sirve para compilar. para compilar la app, he creado una carpeta llamada build para que los archivos compilados y los del codigo no estén en la misma carpeta. corre el app con node build/index.js
 
 npm i ts-node-dev -D para que el archivo compile automaticamente despues de un cambio
-en el package agregue un script: "dev":"ts-node-dev nombreDeTuArchivo"
+en el package agregue un script: "dev":"ts-node-dev ubicacion&nombreDeTuArchivo"
+para correr el script: npm run dev
 
 -----------ARCHIVO DE CONFIGURACIÓN DE TYPESCRIPT-------------------------
 
