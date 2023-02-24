@@ -1,5 +1,8 @@
-archivo para correr typescript y obtener el archivo de configuracion: npm run tsc -- --init
-investigar que son los tipos en typesrcript. por cada modulo puede haber un problema de tipos y hay que
+1-CREAR PACKAGE.JSON CON NPM INIT
+2-AGREGAR SCRIPT A LOS SCRIPT DE ESE PACKEGE: "tsc":"tsc"
+3-EN LA MISMA CARPETA CORRER ESTE COMANDO
+PARA RECIBIR EL ARCHIVO DE CONFIGURACION DEL COMPILADOR: npm run tsc -- --init
+investigar que son los tipos en typescript. por cada modulo puede haber un problema de tipos y hay que
 instalar packetes para que los tipos se activen en el modulo que no  reconoce typescript como :
 npm install @types/express -D 
 he creado un script llamado "tsc" y ese sirve para compilar. para compilar la app, he creado una carpeta llamada build para que los archivos compilados y los del codigo no estén en la misma carpeta. corre el app con node build/index.js
